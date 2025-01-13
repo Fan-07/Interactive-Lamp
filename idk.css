@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(180deg, #042331, #063144);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1000;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.hidden {
+    transform: translateX(-220px);
+}
+
+.sidebar header {
+    font-size: 28px;
+    color: #f4f4f4;
+    line-height: 80px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #063144;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul a {
+    display: block;
+    line-height: 60px;
+    color: #f5eded;
+    padding-left: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul a:hover {
+    padding-left: 35px;
+    font-weight: bold;
+    color: #b2f5ea;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-button {
+    position: fixed;
+    top: 0px;
+    left: 220px;
+    background: #1c526b;
+    color: #f4f4f4;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), background 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button:hover {
+    background: #3e82a0;
+    transform: translateX(-15px);
+}
+
+.toggle-button:active {
+    background: #0f3c4d;
+    transform: scale(1.05) translateX(-25px);
+}
+
+.toggle-button.hidden {
+    transform: translateX(-220px);
+}
+
+h3 {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #f4f4f4;
+}
+
+h3:hover {
+    transform: scale(1.1);
+    color: #b2f5ea;
+}
+
+.sidebar ul {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #b2f5ea #042331;
+}
+
+.sidebar ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb {
+    background: #b2f5ea;
+    border-radius: 3px;
+}
+
+.sidebar ul::-webkit-scrollbar-track {
+    background: #042331;
+}
+
+body {
+    background: linear-gradient(420deg, rgb(5, 33, 65), rgb(42, 87, 211));
+    padding-left: 220px;
+    transition: padding-left 0.4s ease;
+}
+
+body.sidebar-hidden {
+    padding-left: 0;
+}
