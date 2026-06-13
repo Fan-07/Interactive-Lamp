@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.scene {
+    text-align: center;
+    position: relative;
+}
+
+.lamp {
+    font-size: 80px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.lamp:active {
+    transform: scale(0.9);
+}
+
+.light-beam {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 500px;
+    background: radial-gradient(
+        ellipse at top,
+        rgba(255, 255, 150, 0.9),
+        rgba(255, 255, 150, 0.2),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.light-on .light-beam {
+    opacity: 1;
+}
+
+.hint {
+    color: white;
+    margin-top: 20px;
+    opacity: 0.6;
+}
